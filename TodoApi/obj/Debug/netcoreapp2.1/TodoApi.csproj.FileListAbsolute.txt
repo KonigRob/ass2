@@ -1,0 +1,41 @@
+/Users/jessegoertz/Projects/TodoApi/TodoApi/bin/Debug/netcoreapp2.1/TodoApi.deps.json
+/Users/jessegoertz/Projects/TodoApi/TodoApi/bin/Debug/netcoreapp2.1/TodoApi.runtimeconfig.json
+/Users/jessegoertz/Projects/TodoApi/TodoApi/bin/Debug/netcoreapp2.1/TodoApi.runtimeconfig.dev.json
+/Users/jessegoertz/Projects/TodoApi/TodoApi/bin/Debug/netcoreapp2.1/TodoApi.dll
+/Users/jessegoertz/Projects/TodoApi/TodoApi/bin/Debug/netcoreapp2.1/TodoApi.pdb
+/Users/jessegoertz/Projects/TodoApi/TodoApi/obj/Debug/netcoreapp2.1/TodoApi.csproj.CoreCompileInputs.cache
+/Users/jessegoertz/Projects/TodoApi/TodoApi/obj/Debug/netcoreapp2.1/TodoApi.RazorAssemblyInfo.cache
+/Users/jessegoertz/Projects/TodoApi/TodoApi/obj/Debug/netcoreapp2.1/TodoApi.RazorAssemblyInfo.cs
+/Users/jessegoertz/Projects/TodoApi/TodoApi/obj/Debug/netcoreapp2.1/TodoApi.AssemblyInfoInputs.cache
+/Users/jessegoertz/Projects/TodoApi/TodoApi/obj/Debug/netcoreapp2.1/TodoApi.AssemblyInfo.cs
+/Users/jessegoertz/Projects/TodoApi/TodoApi/obj/Debug/netcoreapp2.1/TodoApi.RazorTargetAssemblyInfo.cache
+/Users/jessegoertz/Projects/TodoApi/TodoApi/obj/Debug/netcoreapp2.1/TodoApi.dll
+/Users/jessegoertz/Projects/TodoApi/TodoApi/obj/Debug/netcoreapp2.1/TodoApi.pdb
+C:\Users\Rober\Downloads\TodoApi\TodoApi\TodoApi\obj\Debug\netcoreapp2.1\TodoApi.csproj.CoreCompileInputs.cache
+C:\Users\Rober\Downloads\TodoApi\TodoApi\TodoApi\obj\Debug\netcoreapp2.1\TodoApi.RazorAssemblyInfo.cache
+C:\Users\Rober\Downloads\TodoApi\TodoApi\TodoApi\obj\Debug\netcoreapp2.1\TodoApi.RazorAssemblyInfo.cs
+C:\Users\Rober\Downloads\TodoApi\TodoApi\TodoApi\obj\Debug\netcoreapp2.1\TodoApi.AssemblyInfoInputs.cache
+C:\Users\Rober\Downloads\TodoApi\TodoApi\TodoApi\obj\Debug\netcoreapp2.1\TodoApi.AssemblyInfo.cs
+C:\Users\Rober\Downloads\TodoApi\TodoApi\TodoApi\bin\Debug\netcoreapp2.1\TodoApi.deps.json
+C:\Users\Rober\Downloads\TodoApi\TodoApi\TodoApi\bin\Debug\netcoreapp2.1\TodoApi.runtimeconfig.json
+C:\Users\Rober\Downloads\TodoApi\TodoApi\TodoApi\bin\Debug\netcoreapp2.1\TodoApi.runtimeconfig.dev.json
+C:\Users\Rober\Downloads\TodoApi\TodoApi\TodoApi\bin\Debug\netcoreapp2.1\TodoApi.dll
+C:\Users\Rober\Downloads\TodoApi\TodoApi\TodoApi\bin\Debug\netcoreapp2.1\TodoApi.pdb
+C:\Users\Rober\Downloads\TodoApi\TodoApi\TodoApi\obj\Debug\netcoreapp2.1\TodoApi.RazorTargetAssemblyInfo.cache
+C:\Users\Rober\Downloads\TodoApi\TodoApi\TodoApi\obj\Debug\netcoreapp2.1\TodoApi.dll
+C:\Users\Rober\Downloads\TodoApi\TodoApi\TodoApi\obj\Debug\netcoreapp2.1\TodoApi.pdb
+C:\Users\Rober\Downloads\TodoApi\TodoApi\TodoApi\obj\Debug\netcoreapp2.1\TodoApi.csprojAssemblyReference.cache
+C:\Users\Rober\Desktop\Asp ass2\TodoApi\bin\Debug\netcoreapp2.1\TodoApi.deps.json
+C:\Users\Rober\Desktop\Asp ass2\TodoApi\bin\Debug\netcoreapp2.1\TodoApi.runtimeconfig.json
+C:\Users\Rober\Desktop\Asp ass2\TodoApi\bin\Debug\netcoreapp2.1\TodoApi.runtimeconfig.dev.json
+C:\Users\Rober\Desktop\Asp ass2\TodoApi\bin\Debug\netcoreapp2.1\TodoApi.dll
+C:\Users\Rober\Desktop\Asp ass2\TodoApi\bin\Debug\netcoreapp2.1\TodoApi.pdb
+C:\Users\Rober\Desktop\Asp ass2\TodoApi\obj\Debug\netcoreapp2.1\TodoApi.csprojAssemblyReference.cache
+C:\Users\Rober\Desktop\Asp ass2\TodoApi\obj\Debug\netcoreapp2.1\TodoApi.csproj.CoreCompileInputs.cache
+C:\Users\Rober\Desktop\Asp ass2\TodoApi\obj\Debug\netcoreapp2.1\TodoApi.RazorAssemblyInfo.cache
+C:\Users\Rober\Desktop\Asp ass2\TodoApi\obj\Debug\netcoreapp2.1\TodoApi.RazorAssemblyInfo.cs
+C:\Users\Rober\Desktop\Asp ass2\TodoApi\obj\Debug\netcoreapp2.1\TodoApi.AssemblyInfoInputs.cache
+C:\Users\Rober\Desktop\Asp ass2\TodoApi\obj\Debug\netcoreapp2.1\TodoApi.AssemblyInfo.cs
+C:\Users\Rober\Desktop\Asp ass2\TodoApi\obj\Debug\netcoreapp2.1\TodoApi.RazorTargetAssemblyInfo.cache
+C:\Users\Rober\Desktop\Asp ass2\TodoApi\obj\Debug\netcoreapp2.1\TodoApi.dll
+C:\Users\Rober\Desktop\Asp ass2\TodoApi\obj\Debug\netcoreapp2.1\TodoApi.pdb
