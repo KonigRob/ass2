@@ -28,7 +28,15 @@ namespace TodoApi
                     .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddIdentity<ApplicationUser, ApplicationRole>(
-                options => options.Stores.MaxLengthForKeys = 128)
+                option => {
+                    option.Password.RequireDigit = false;
+                    option.Password.RequiredLength = 6;
+                    option.Password.RequireNonAlphanumeric = false;
+                    option.Password.RequireUppercase = false;
+                    option.Password.RequireLowercase = false;
+                }
+                
+            )
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
             services.AddAuthentication(option => {
@@ -46,6 +54,17 @@ namespace TodoApi
                     ValidIssuer = Configuration["Jwt:Site"],
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:SigningKey"]))
                 };
+            });
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAllOrigins",
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin();
+                        builder.AllowAnyMethod();
+                        builder.AllowAnyHeader();
+                    }
+                );
             });
         }
 

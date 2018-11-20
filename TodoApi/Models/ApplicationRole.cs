@@ -15,8 +15,6 @@ namespace TodoApi.Models
 
         public ApplicationRole(string roleName, string description, DateTime createdDate) : base(roleName)
         {
-            base.Name = roleName;
-
             this.Description = description;
             this.DateCreated = createdDate;
         }

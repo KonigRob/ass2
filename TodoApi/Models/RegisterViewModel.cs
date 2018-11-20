@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TodoApi.Models
 {
-    public class RegisterViewModel : IdentityUser
+    public class RegisterViewModel
     {
         [Required]
         [EmailAddress]
@@ -21,7 +21,7 @@ namespace TodoApi.Models
         [Required]
         public string LastName { get; set; }
         [Required]
-        public DateTime BirthDate { get; set; }
+        public string BirthDate { get; set; }
         [Required]
         public string Street { get; set; }
         [Required]
