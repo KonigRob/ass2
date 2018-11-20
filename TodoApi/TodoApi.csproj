@@ -7,10 +7,10 @@
   <ItemGroup>
     <Compile Remove="Controllers\TodoController.cs" />
     <Compile Remove="Models\TodoItem.cs" />
+    <Compile Remove="ViewModel\LoginViewModel.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Migrations\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 

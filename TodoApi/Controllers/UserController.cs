@@ -108,8 +108,8 @@ namespace TodoApi.Controllers
             child.Street = child.Street;
             child.City = child.City;
             child.Province = child.Province;
-            child.Country = child.Country;
             child.PostalCode = child.PostalCode;
+            child.Country = child.Country;
             child.Latitude = child.Latitude;
             child.Longitude = child.Longitude;
             child.IsNaughty = child.IsNaughty;
