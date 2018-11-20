@@ -13,7 +13,6 @@ using TodoApi.Models;
 
 namespace TodoApi.Controllers
 {
-    
     [Route("api")]
     public class AuthController : Controller
     {
@@ -74,7 +73,6 @@ namespace TodoApi.Controllers
             if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))
             {
                 var claims = new List<Claim> {
-                    new Claim(JwtRegisteredClaimNames.Sub, user.UserName),
                     new Claim(JwtRegisteredClaimNames.Email, user.Email),
                 };
                 var userRoles = await _userManager.GetRolesAsync(user);

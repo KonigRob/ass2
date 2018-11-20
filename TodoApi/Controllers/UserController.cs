@@ -6,11 +6,13 @@ using System;
 using TodoApi.Data;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TodoApi.Controllers
 {
     [Route("api")]
     [ApiController]
+    [Authorize]
     public class UserController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
@@ -26,7 +28,6 @@ namespace TodoApi.Controllers
         [HttpGet("children")]
         public ActionResult<List<ApplicationUser>> GetAll()
         {
-            var currentUser = GetUser();
             if(!_userManager.IsInRoleAsync(GetUser(), "Admin").Result) {
                 return StatusCode(401, new { error = "Bad access" });
             }
