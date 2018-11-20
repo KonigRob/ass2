@@ -39,3 +39,17 @@ C:\Users\Rober\Desktop\Asp ass2\TodoApi\obj\Debug\netcoreapp2.1\TodoApi.Assembly
 C:\Users\Rober\Desktop\Asp ass2\TodoApi\obj\Debug\netcoreapp2.1\TodoApi.RazorTargetAssemblyInfo.cache
 C:\Users\Rober\Desktop\Asp ass2\TodoApi\obj\Debug\netcoreapp2.1\TodoApi.dll
 C:\Users\Rober\Desktop\Asp ass2\TodoApi\obj\Debug\netcoreapp2.1\TodoApi.pdb
+C:\Users\Keir-Desktop\Workspace\COMP4976\assignments\ass2\TodoApi\bin\Debug\netcoreapp2.1\TodoApi.deps.json
+C:\Users\Keir-Desktop\Workspace\COMP4976\assignments\ass2\TodoApi\bin\Debug\netcoreapp2.1\TodoApi.runtimeconfig.json
+C:\Users\Keir-Desktop\Workspace\COMP4976\assignments\ass2\TodoApi\bin\Debug\netcoreapp2.1\TodoApi.runtimeconfig.dev.json
+C:\Users\Keir-Desktop\Workspace\COMP4976\assignments\ass2\TodoApi\bin\Debug\netcoreapp2.1\TodoApi.dll
+C:\Users\Keir-Desktop\Workspace\COMP4976\assignments\ass2\TodoApi\bin\Debug\netcoreapp2.1\TodoApi.pdb
+C:\Users\Keir-Desktop\Workspace\COMP4976\assignments\ass2\TodoApi\obj\Debug\netcoreapp2.1\TodoApi.csprojAssemblyReference.cache
+C:\Users\Keir-Desktop\Workspace\COMP4976\assignments\ass2\TodoApi\obj\Debug\netcoreapp2.1\TodoApi.csproj.CoreCompileInputs.cache
+C:\Users\Keir-Desktop\Workspace\COMP4976\assignments\ass2\TodoApi\obj\Debug\netcoreapp2.1\TodoApi.RazorAssemblyInfo.cache
+C:\Users\Keir-Desktop\Workspace\COMP4976\assignments\ass2\TodoApi\obj\Debug\netcoreapp2.1\TodoApi.RazorAssemblyInfo.cs
+C:\Users\Keir-Desktop\Workspace\COMP4976\assignments\ass2\TodoApi\obj\Debug\netcoreapp2.1\TodoApi.AssemblyInfoInputs.cache
+C:\Users\Keir-Desktop\Workspace\COMP4976\assignments\ass2\TodoApi\obj\Debug\netcoreapp2.1\TodoApi.AssemblyInfo.cs
+C:\Users\Keir-Desktop\Workspace\COMP4976\assignments\ass2\TodoApi\obj\Debug\netcoreapp2.1\TodoApi.RazorTargetAssemblyInfo.cache
+C:\Users\Keir-Desktop\Workspace\COMP4976\assignments\ass2\TodoApi\obj\Debug\netcoreapp2.1\TodoApi.dll
+C:\Users\Keir-Desktop\Workspace\COMP4976\assignments\ass2\TodoApi\obj\Debug\netcoreapp2.1\TodoApi.pdb

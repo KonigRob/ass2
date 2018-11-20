@@ -9,8 +9,8 @@ using TodoApi.Data;
 namespace TodoApi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20181120090126_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20181120024358_AddIdentityModels")]
+    partial class AddIdentityModels
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -152,7 +152,6 @@ namespace TodoApi.Migrations
                         .IsRequired();
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasMaxLength(256);
 
                     b.Property<bool>("EmailConfirmed");
@@ -179,9 +178,6 @@ namespace TodoApi.Migrations
                     b.Property<string>("NormalizedUserName")
                         .HasMaxLength(256);
 
-                    b.Property<string>("Password")
-                        .IsRequired();
-
                     b.Property<string>("PasswordHash");
 
                     b.Property<string>("PhoneNumber");
@@ -202,7 +198,6 @@ namespace TodoApi.Migrations
                     b.Property<bool>("TwoFactorEnabled");
 
                     b.Property<string>("UserName")
-                        .IsRequired()
                         .HasMaxLength(256);
 
                     b.HasKey("Id");

@@ -36,17 +36,21 @@ namespace TodoApi.Data
             {
                 var user = new ApplicationUser
                 {
+                    // inherited from IdentityUser
                     UserName = "santa",
                     Email = "santa@np.com",
+
+                    // ApplicationUSer attributes
                     FirstName = "Saint",
                     LastName = "Nick",
+                    BirthDate = new DateTime(1950, 9, 13),
                     Street = "Yew St",
                     City = "Vancouver",
                     Province = "BC",
                     PostalCode = "V3U E2Y",
                     Country = "Canada",
-                    Latitude = 0.0,
-                    Longitude = 0.0,
+                    Latitude = 12.77,
+                    Longitude = 39.4,
                     IsNaughty = false
                 };
 
@@ -62,10 +66,14 @@ namespace TodoApi.Data
             {
                 var user = new ApplicationUser
                 {
+                    // inherited from IdentityUser
                     UserName = "tim",
                     Email = "time@np.com",
+
+                    // ApplicationUSer attributes
                     FirstName = "tim",
                     LastName = "twoshoes",
+                    BirthDate = new DateTime(1950, 9, 13),
                     Street = "Well St",
                     City = "Vancouver",
                     Province = "BC",

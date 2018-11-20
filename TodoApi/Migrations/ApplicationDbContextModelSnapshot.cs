@@ -150,7 +150,6 @@ namespace TodoApi.Migrations
                         .IsRequired();
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasMaxLength(256);
 
                     b.Property<bool>("EmailConfirmed");
@@ -177,9 +176,6 @@ namespace TodoApi.Migrations
                     b.Property<string>("NormalizedUserName")
                         .HasMaxLength(256);
 
-                    b.Property<string>("Password")
-                        .IsRequired();
-
                     b.Property<string>("PasswordHash");
 
                     b.Property<string>("PhoneNumber");
@@ -200,7 +196,6 @@ namespace TodoApi.Migrations
                     b.Property<bool>("TwoFactorEnabled");
 
                     b.Property<string>("UserName")
-                        .IsRequired()
                         .HasMaxLength(256);
 
                     b.HasKey("Id");

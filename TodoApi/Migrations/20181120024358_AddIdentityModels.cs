@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace TodoApi.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class AddIdentityModels : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -28,7 +28,9 @@ namespace TodoApi.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(nullable: false),
+                    UserName = table.Column<string>(maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(maxLength: 256, nullable: true),
+                    Email = table.Column<string>(maxLength: 256, nullable: true),
                     NormalizedEmail = table.Column<string>(maxLength: 256, nullable: true),
                     EmailConfirmed = table.Column<bool>(nullable: false),
                     PasswordHash = table.Column<string>(nullable: true),
@@ -40,9 +42,6 @@ namespace TodoApi.Migrations
                     LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
                     LockoutEnabled = table.Column<bool>(nullable: false),
                     AccessFailedCount = table.Column<int>(nullable: false),
-                    Email = table.Column<string>(maxLength: 256, nullable: false),
-                    Password = table.Column<string>(nullable: false),
-                    UserName = table.Column<string>(maxLength: 256, nullable: false),
                     FirstName = table.Column<string>(nullable: false),
                     LastName = table.Column<string>(nullable: false),
                     BirthDate = table.Column<DateTime>(nullable: false),
