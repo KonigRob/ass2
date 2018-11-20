@@ -29,15 +29,7 @@ namespace TodoApi.Controllers
         [HttpPost]
         public async Task<ActionResult> InsertUser([FromBody] RegisterViewModel model)
         {
-            if (!ModelState.IsValid) { return BadRequest(ModelState); }
-
-            var usersEmail = await _userManager.FindByEmailAsync(model.Email);
-
-            if (usersEmail != null) { return BadRequest(new { error =  model.Email + "\' already exists" }); }
-
-            var usersName = await _userManager.FindByNameAsync(model.UserName);
-
-            if (usersName != null) { return BadRequest(new {  error = model.FirstName + "\' already exists" }); }
+            
             var user = new ApplicationUser
             {
                 Email = model.Email,
@@ -65,10 +57,7 @@ namespace TodoApi.Controllers
         [HttpPost]
         public async Task<ActionResult> Login([FromBody] LoginViewModel model)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+            
             var user = await _userManager.FindByEmailAsync(model.Email);
             if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))
             {

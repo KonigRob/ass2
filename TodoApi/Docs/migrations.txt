@@ -1,0 +1,2 @@
+﻿add-migration "init" -c ApplicationDbContext
+update-database -c ApplicationDbContext

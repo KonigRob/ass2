@@ -1,12 +1,13 @@
-﻿Rob Koenig
-A00828224
-rkoenig5@my.bcit.ca
-
-Jesse Goertz
+﻿Jesse Goertz
 A00919459
 Jrtz@gmail.com
 
-URL:
+Rob Koenig
+A00828224
+rkoenig5@my.bcit.ca
+
+
+URL: https://santalistv2.azurewebsites.net
 
 We didn't manage to merge the back end to any of the front end, but our API works!! :D
 
