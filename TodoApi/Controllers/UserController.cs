@@ -55,7 +55,6 @@ namespace TodoApi.Controllers
             {
                 return StatusCode(401, new { error = "Bad access" });
             }
-            if (!ModelState.IsValid) { return BadRequest(ModelState); }
             var child = _context.ApplicationUsers.Where(user => user.Id == id).FirstOrDefault();
             if (child == null){ throw new Exception(id + " not found!"); }
 
@@ -99,7 +98,6 @@ namespace TodoApi.Controllers
 
         [HttpPut("account")]
         public ActionResult<ApplicationUser> PutNewUser([FromBody] ApplicationUser user) {
-            if (!ModelState.IsValid) { return BadRequest(ModelState); }
             var child = GetUser();
             child.Email = child.Email;
             child.UserName = child.UserName;
