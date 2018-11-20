@@ -4,106 +4,130 @@ using System.Linq;
 using TodoApi.Models;
 using System;
 using TodoApi.Data;
+using Microsoft.AspNetCore.Identity;
+using System.Security.Claims;
 
 namespace TodoApi.Controllers
 {
-    [Route("api/user")]
+    [Route("api")]
     [ApiController]
     public class UserController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public UserController(ApplicationDbContext context)
+        public UserController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
-
-            if (_context.ApplicationUsers.Count() == 0)
-            {
-                //Create a new TodoItem if collection is empty,
-                //which means you can't delete all TodoItems.
-                _context.ApplicationUsers.Add(new ApplicationUser
-                {
-                    FirstName = "lName",
-                    LastName = "fName",
-                    BirthDate = new DateTime(2008, 5, 1, 8, 30, 52),
-                    Street = "Dummy Street",
-                    City = "Bitchmond",
-                    Province = "BC",
-                    PostalCode = "No",
-                    Country = "Canada",
-                    Latitude = 1.0,
-                    Longitude = 1.0,
-                    IsNaughty = true
-
-                });
-                _context.SaveChanges();
-            }
+            _userManager = userManager;
+            
         }
 
-        [HttpGet]
+        [HttpGet("children")]
         public ActionResult<List<ApplicationUser>> GetAll()
         {
-            return _context.ApplicationUsers.ToList();
-        }
-
-        [HttpGet("{id}", Name = "GetUser")]
-        public ActionResult<ApplicationUser> GetById(int id)
-        {
-            var item = _context.ApplicationUsers.Find(id);
-            if (item == null)
-            {
-                return NotFound();
+            var currentUser = GetUser();
+            if(!_userManager.IsInRoleAsync(GetUser(), "Admin").Result) {
+                return StatusCode(401, new { error = "Bad access" });
             }
-            return item;
+            return _userManager.GetUsersInRoleAsync("Child").Result.ToList();
         }
 
-        [HttpPost]
-        public IActionResult Create(ApplicationUser item)
+        [HttpGet("children/{id}")]
+        public IActionResult GetById(string id)
         {
-            _context.ApplicationUsers.Add(item);
+            var currentUser = GetUser();
+            if (!_userManager.IsInRoleAsync(GetUser(), "Admin").Result)
+            {
+                return StatusCode(401, new { error = "Bad access" });
+            }
+            var child = _context.ApplicationUsers.Where(user => user.Id == id).FirstOrDefault();
+            if (child == null) { throw new Exception(id + " not found!"); }
+            return Ok(child);
+        }
+
+        [HttpPut("children/{id}")]
+        public ActionResult UpdateChild(string id, [FromBody] ApplicationUser item)
+        {
+            var currentUser = GetUser();
+            if (!_userManager.IsInRoleAsync(GetUser(), "Admin").Result)
+            {
+                return StatusCode(401, new { error = "Bad access" });
+            }
+            if (!ModelState.IsValid) { return BadRequest(ModelState); }
+            var child = _context.ApplicationUsers.Where(user => user.Id == id).FirstOrDefault();
+            if (child == null){ throw new Exception(id + " not found!"); }
+
+            child.Email = child.Email;
+            child.UserName = child.UserName;
+            child.FirstName = child.FirstName;
+            child.LastName = child.LastName;
+            child.BirthDate = child.BirthDate;
+            child.Street = child.Street;
+            child.City = child.City;
+            child.Province = child.Province;
+            child.Country = child.Country;
+            child.PostalCode = child.PostalCode;
+            child.Latitude = child.Latitude;
+            child.Longitude = child.Longitude;
+            child.IsNaughty = child.IsNaughty;
+
             _context.SaveChanges();
-
-            return CreatedAtRoute("GetTodo", new { id = item.Id }, item);
+            return NoContent();
         }
 
-        [HttpPut("{id}")]
-        public IActionResult Update(int id, ApplicationUser item)
+        [HttpDelete("children/{id}")]
+        public IActionResult Delete(string id)
         {
-            var todo = _context.ApplicationUsers.Find(id);
-            if (todo == null)
+            var currentUser = GetUser();
+            if (!_userManager.IsInRoleAsync(GetUser(), "Admin").Result)
             {
-                return NotFound();
+                return StatusCode(401, new { error = "Bad access" });
             }
-
-            todo.FirstName = item.FirstName;
-            todo.LastName = item.LastName;
-            todo.BirthDate = item.BirthDate;
-            todo.Street = item.Street;
-            todo.City = item.City;
-            todo.Province = item.Province;
-            todo.PostalCode = item.PostalCode;
-            todo.Country = item.Country;
-            todo.Latitude = item.Latitude;
-            todo.Longitude = item.Longitude;
-            todo.IsNaughty = item.IsNaughty;
-
-            _context.ApplicationUsers.Update(todo);
+            var child = _context.ApplicationUsers.Where(user => user.Id == id).FirstOrDefault();
+            if (child == null) { throw new Exception(id + " not found!"); }
+            _context.ApplicationUsers.Remove(child);
             _context.SaveChanges();
             return NoContent();
         }
 
-        [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
-        {
-            var todo = _context.ApplicationUsers.Find(id);
-            if (todo == null)
-            {
-                return NotFound();
-            }
+        [HttpGet("account")]
+        public ActionResult<ApplicationUser> GetCheck() {
+            return GetUser();
+        }
 
-            _context.ApplicationUsers.Remove(todo);
+        [HttpPut("account")]
+        public ActionResult<ApplicationUser> PutNewUser([FromBody] ApplicationUser user) {
+            if (!ModelState.IsValid) { return BadRequest(ModelState); }
+            var child = GetUser();
+            child.Email = child.Email;
+            child.UserName = child.UserName;
+            child.FirstName = child.FirstName;
+            child.LastName = child.LastName;
+            child.BirthDate = child.BirthDate;
+            child.Street = child.Street;
+            child.City = child.City;
+            child.Province = child.Province;
+            child.Country = child.Country;
+            child.PostalCode = child.PostalCode;
+            child.Latitude = child.Latitude;
+            child.Longitude = child.Longitude;
+            child.IsNaughty = child.IsNaughty;
+
             _context.SaveChanges();
-            return NoContent();
+            return user;
+        }
+
+        //Yeah, I found this from.  It really helped, and yeah. :p
+        //https://stackoverflow.com/questions/50120968/extract-values-from-httpcontext-user-claims
+        private ApplicationUser GetUser() {
+            var email = HttpContext.User.Claims.Where(claim => claim.Type == ClaimTypes.Email).First().Value;
+
+            var user = _context.ApplicationUsers.Where(usr => usr.Email == email).FirstOrDefault();
+            if (user == null) {
+                throw new Exception("user not found");
+            }
+            return user;
         }
     }
 }

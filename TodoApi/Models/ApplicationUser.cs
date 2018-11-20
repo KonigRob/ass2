@@ -9,15 +9,6 @@ namespace TodoApi.Models
 {
     public class ApplicationUser : IdentityUser
     {
-        public ApplicationUser() : base() { }
-
-        [Required]
-        [EmailAddress]
-        public string Email { get; set; }
-        [Required]
-        public string Password { get; set; }
-        [Required]
-        public string UserName { get; set; }
         [Required]
         public string FirstName { get; set; }
         [Required]
@@ -40,5 +31,7 @@ namespace TodoApi.Models
         public double Longitude { get; set; }
         [Required]
         public bool IsNaughty { get; set; }
+        [Required]
+        public DateTime DateCreated { get; set; }
     }
 }

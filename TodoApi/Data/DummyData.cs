@@ -36,10 +36,14 @@ namespace TodoApi.Data
             {
                 var user = new ApplicationUser
                 {
-                    UserName = "santa",
+                    // inherited from IdentityUser
                     Email = "santa@np.com",
+                    UserName = "santa",
+
+                    // ApplicationUSer attributes
                     FirstName = "Saint",
                     LastName = "Nick",
+                    BirthDate = new DateTime(2018, 11, 19),
                     Street = "Yew St",
                     City = "Vancouver",
                     Province = "BC",
@@ -47,7 +51,9 @@ namespace TodoApi.Data
                     Country = "Canada",
                     Latitude = 0.0,
                     Longitude = 0.0,
-                    IsNaughty = false
+                    IsNaughty = false,
+                    DateCreated = DateTime.Now
+                    
                 };
 
                 var result = await userManager.CreateAsync(user);
@@ -62,10 +68,14 @@ namespace TodoApi.Data
             {
                 var user = new ApplicationUser
                 {
+                    // inherited from IdentityUser
                     UserName = "tim",
                     Email = "time@np.com",
+
+                    // ApplicationUSer attributes
                     FirstName = "tim",
                     LastName = "twoshoes",
+                    BirthDate = new DateTime(1997, 06, 19),
                     Street = "Well St",
                     City = "Vancouver",
                     Province = "BC",
@@ -73,7 +83,8 @@ namespace TodoApi.Data
                     Country = "Canada",
                     Latitude = 60.0,
                     Longitude = 50.5,
-                    IsNaughty = true
+                    IsNaughty = true,
+                    DateCreated = DateTime.Now,
                 };
 
                 var result = await userManager.CreateAsync(user);
